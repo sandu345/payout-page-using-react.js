@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import { firestore } from './components/firebase.config';
 
 const db = firebase.firestore();
 
@@ -22,9 +23,9 @@ function AdminPanel() {
   }, []);
 
   const handleDeposit = (amount) => {
-    // Add payment to payments collection
+    
     db.collection('payments').add({
-      customerId: '123', // Replace with actual customer ID
+      customerId: '123', //  actual customer ID
       amount: amount,
     });
 
