@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* AdminPanel styles */
+  .App {
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #4a148c;
+  }
+  
+  /* Payment form styles */
+  .CustomerPayment {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .CustomerPayment input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .CustomerPayment button {
+    background-color: #4a148c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .CustomerPayment button:hover {
+    background-color: #38006b; /* Darker purple color on hover */
+  }
+  
+  /* Withdrawal form styles */
+  .WithdrawForm {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .WithdrawForm p {
+    color: #4a148c; /* Purple color */
+    font-weight: bold;
+  }
+  
+  .WithdrawForm input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .WithdrawForm button {
+    background-color: #4a148c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .WithdrawForm button:hover {
+    background-color: #38006b; /* Darker purple color on hover */
+  }
+  

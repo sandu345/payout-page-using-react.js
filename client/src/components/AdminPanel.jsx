@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { firestore } from './components/firebase.config';
+import './styles/styles';
 
 const db = firebase.firestore();
 
