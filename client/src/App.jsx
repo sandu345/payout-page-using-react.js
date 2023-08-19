@@ -24,11 +24,12 @@
 
 // export default App;
 
-// src/App.js
+
+
 import React from 'react';
 import './App.css';
 import AdminPanel from './components/AdminPanel';
-import { firestore } from './components/firebase.config';
+import { firestore } from './firebase.config';
 
 function App() {
   return (
@@ -39,5 +40,4 @@ function App() {
 }
 
 export default App;
-
 
