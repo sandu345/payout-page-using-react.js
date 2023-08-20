@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 //import firebase from 'firebase/app';
 //import 'firebase/firestore';
-import { firestore } from './firebase.config';
-import './adminPanel.css';
+import { firestore } from '../utils/firebase.config';
+import '../styles/adminPanel';
 
 const db = firestore();
 

@@ -5,7 +5,7 @@ body {
     padding: 0;
   }
   
-  /* AdminPanel styles */
+  
   .App {
     text-align: center;
     background-color: #f5f5f5;
@@ -16,7 +16,7 @@ body {
     color: #4a148c;
   }
   
-  /* Payment form styles */
+ 
   .CustomerPayment {
     margin-top: 20px;
     padding: 10px;
@@ -44,10 +44,10 @@ body {
   }
   
   .CustomerPayment button:hover {
-    background-color: #38006b; /* Darker purple color on hover */
+    background-color: #38006b; 
   }
   
-  /* Withdrawal form styles */
+  
   .WithdrawForm {
     margin-top: 20px;
     padding: 10px;
@@ -80,6 +80,6 @@ body {
   }
   
   .WithdrawForm button:hover {
-    background-color: #38006b; /* Darker purple color on hover */
+    background-color: #38006b; 
   }
   
