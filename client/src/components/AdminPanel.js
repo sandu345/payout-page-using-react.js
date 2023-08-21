@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from 'react';
-//import firebase from 'firebase/app';
-//import 'firebase/firestore';
-import { firestore } from '../utils/firebase.config';
-import '../styles/adminPanel';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, doc, updateDoc, addDoc, increment } from 'firebase/firestore';
+import adminPanel from '../../src/styles/adminPanel.css';
 
-const db = firestore();
+const firebaseConfig = {
+  apiKey: 'YOUR_API_KEY',
+  authDomain: 'YOUR_AUTH_DOMAIN',
+  projectId: 'YOUR_PROJECT_ID',
+  storageBucket: 'YOUR_STORAGE_BUCKET',
+  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+  appId: 'YOUR_APP_ID',
+  measurementId: 'YOUR_MEASUREMENT_ID',
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 function AdminPanel() {
   const [balance, setBalance] = useState(0);
   const [withdrawAmount, setWithdrawAmount] = useState(0);
 
   useEffect(() => {
-    // Fetch admin balance from Firestore
     const fetchBalance = async () => {
       const adminBalanceRef = db.collection('admin').doc('balance');
       const adminBalanceDoc = await adminBalanceRef.get();
@@ -24,15 +33,14 @@ function AdminPanel() {
   }, []);
 
   const handleDeposit = (amount) => {
-    
-    db.collection('payments').add({
-      customerId: '123', //  actual customer ID
+    addDoc(collection(db, 'payments'), {
+      customerId: '123', // actual customer ID
       amount: amount,
     });
 
-    // Update admin balance
-    db.collection('admin').doc('balance').update({
-      balance: firestore.FieldValue.increment(amount),
+    const adminBalanceRef = doc(db, 'admin', 'balance');
+    updateDoc(adminBalanceRef, {
+      balance: increment(amount),
     });
 
     setBalance(balance + amount);
@@ -40,9 +48,9 @@ function AdminPanel() {
 
   const handleWithdraw = () => {
     if (balance >= 50) {
-      // Process withdrawal logic
-      db.collection('admin').doc('balance').update({
-        balance: firestore.FieldValue.increment(-withdrawAmount),
+      const adminBalanceRef = doc(db, 'admin', 'balance');
+      updateDoc(adminBalanceRef, {
+        balance: increment(-withdrawAmount),
       });
 
       setBalance(balance - withdrawAmount);
@@ -80,7 +88,6 @@ function CustomerPayment({ onDeposit }) {
   const [paymentAmount, setPaymentAmount] = useState(0);
 
   const handlePayment = () => {
-    // Process customer payment
     onDeposit(paymentAmount);
     setPaymentAmount(0);
   };
