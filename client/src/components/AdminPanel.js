@@ -4,13 +4,13 @@ import { getFirestore, collection, doc, updateDoc, addDoc, increment } from 'fir
 import adminPanel from '../../src/styles/adminPanel.css';
 
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_AUTH_DOMAIN',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_STORAGE_BUCKET',
-  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-  appId: 'YOUR_APP_ID',
-  measurementId: 'YOUR_MEASUREMENT_ID',
+  apiKey: "AIzaSyAt1fPI5ZcD7qnpbq_UJyZ9Kv3lPYZIwtg",
+  authDomain: "remote-coders-test-ii.firebaseapp.com",
+  projectId: "remote-coders-test-ii",
+  storageBucket: "remote-coders-test-ii.appspot.com",
+  messagingSenderId: "600870640184",
+  appId: "1:600870640184:web:8bbde746767761d88164cd",
+  measurementId: "G-HBLZVPZJVH"
 };
 
 const app = initializeApp(firebaseConfig);
